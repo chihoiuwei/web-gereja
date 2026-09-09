@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Event;
 use App\Models\MinistryMember;
 use App\Models\GalleryAlbum;
+use App\Models\WorshipSchedule;
 
 class HomeController extends Controller
 {
@@ -44,13 +45,19 @@ class HomeController extends Controller
             ->where('is_active', true)
             ->get();
 
+        $worshipSchedules = WorshipSchedule::where('is_active', true)
+            ->orderByRaw("FIELD(day, 'Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu')")
+            ->orderBy('start_time')
+            ->get();
+
         return view('welcome', compact(
             'birthdays',
             'weeklyNews',
             'upcomingEvents',
             'penatalayan',
             'jerumAlbum',
-            'pemudaAlbum'
+            'pemudaAlbum',
+            'worshipSchedules'
         ));
     }
 
@@ -109,5 +116,24 @@ class HomeController extends Controller
         $album->load('photos');
 
         return view('gallery-show', compact('album'));
+    }
+
+    public function worshipSchedules() {
+        $worshipSchedules = WorshipSchedule::where('is_active', true)
+            ->orderByRaw("
+                CASE day
+                    WHEN 'Senin' THEN 1
+                    WHEN 'Selasa' THEN 2
+                    WHEN 'Rabu' THEN 3
+                    WHEN 'Kamis' THEN 4
+                    WHEN 'Jumat' THEN 5
+                    WHEN 'Sabtu' THEN 6
+                    WHEN 'Minggu' THEN 7
+                END
+            ")
+            ->orderBy('start_time')
+            ->get();
+
+        return view('worship-schedules', compact('worshipSchedules'));
     }
 }

@@ -309,6 +309,25 @@
                     </div>
 
 
+                    {{-- JENIS KELAMIN --}}
+                        <div class="mb-5">
+
+                            <label class="block text-sm font-medium mb-2">
+                                Jenis Kelamin
+                            </label>
+
+                            <select
+                                id="editGender"
+                                name="gender"
+                                class="w-full rounded-lg border-gray-300"
+                            >
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="male">Laki-laki</option>
+                                <option value="female">Perempuan</option>
+                            </select>
+
+                        </div>
+
                     {{-- TELEPON --}}
                     <div class="mb-5">
 
@@ -506,7 +525,6 @@
                             </p>
                         </div>
 
-
                         {{-- TELEPON --}}
                         <div>
                             <p class="text-sm text-gray-400">
@@ -684,6 +702,28 @@
 
                     </div>
 
+                    {{-- JENIS KELAMIN --}}
+                    <div class="mb-5">
+
+                        <label class="block text-sm font-medium mb-2">
+                            Jenis Kelamin
+                        </label>
+
+                        <select
+                            name="gender"
+                            class="w-full rounded-lg border-gray-300"
+                        >
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="male" {{ old('gender') === 'male' ? 'selected' : '' }}>
+                                Laki-laki
+                            </option>
+                            <option value="female" {{ old('gender') === 'female' ? 'selected' : '' }}>
+                                Perempuan
+                            </option>
+                        </select>
+
+                    </div>
+
 
                     {{-- TELEPON --}}
                     <div class="mb-5">
@@ -774,6 +814,7 @@
 
         document.getElementById('editName').value = jemaat.name ?? '';
         document.getElementById('editBirthDate').value = jemaat.birth_date  ? jemaat.birth_date.substring(0, 10): '';
+        document.getElementById('editGender').value = jemaat.gender ?? '';
         document.getElementById('editPhone').value = jemaat.phone ?? '';
         document.getElementById('editAddress').value = jemaat.address ?? '';
         document.getElementById('editBio').value = jemaat.bio ?? '';

@@ -46,7 +46,7 @@
             <div class="footer-socials">
 
                 <a
-                    href="https://wa.me/6282198948311?text=Halo%20GPIJS%20Jakpus%2C%20saya%20ingin%20bertanya%20mengenai%20informasi%20gereja."
+                    href="https://wa.me/6281289193033?text=Halo%20GPIJS%20Jakpus%2C%20saya%20ingin%20bertanya%20mengenai%20informasi%20gereja."
                     target="_blank"
                     rel="noopener noreferrer"
                     class="footer-social"

@@ -1416,15 +1416,20 @@
 .warta-carousel {
     position: relative;
     width: 100%;
+
 }
 
 .warta-track {
-    position: relative;
+     position: relative;
     z-index: 1;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .warta-arrow {

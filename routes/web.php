@@ -27,6 +27,8 @@ Route::get('/galeri', [HomeController::class, 'gallery'])
     ->name('gallery');
 Route::get('/galeri/{album}', [HomeController::class, 'galleryShow'])
     ->name('gallery.show');
+Route::get('/jadwal-ibadah', [HomeController::class, 'worshipSchedules'])
+    ->name('worship-schedules');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

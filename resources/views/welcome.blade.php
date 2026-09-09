@@ -586,7 +586,7 @@
          ">
 
     <div style="
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
     ">
 
@@ -636,6 +636,178 @@
         </button>
 
         <div class="warta-track">
+
+        {{-- CARD 4 — JADWAL IBADAH --}}
+        <a href="{{ route('worship-schedules') }}"
+        style="
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+                border-radius: 18px;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0,0,0,.08);
+                text-decoration: none;
+                transition: transform .2s, box-shadow .2s;
+        ">
+
+            {{-- FOTO / HEADER --}}
+            <div style="
+                height: 220px;
+                background: #e5e7eb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            ">
+
+                @if ($worshipSchedules->first()?->photo)
+
+                    <img
+                        src="{{ asset('storage/' . $worshipSchedules->first()->photo) }}"
+                        alt="{{ $worshipSchedules->first()->name }}"
+                        style="
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        "
+                    >
+
+                @else
+
+                    <div style="
+                        text-align: center;
+                        color: #9ca3af;
+                    ">
+                        <div style="font-size: 3rem;">
+                            ⛪
+                        </div>
+
+                        <p style="
+                            margin-top: 8px;
+                            font-size: .85rem;
+                        ">
+                            Jadwal Ibadah
+                        </p>
+                    </div>
+
+                @endif
+
+            </div>
+
+
+            {{-- ISI CARD --}}
+            <div style="
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            ">
+
+                <p style="
+                    color: #2563eb;
+                    font-size: .75rem;
+                    font-weight: 700;
+                    letter-spacing: .08em;
+                    margin: 0 0 8px;
+                ">
+                    ⛪ IBADAH GEREJA
+                </p>
+
+
+                <h3 style="
+                    color: #111827;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin: 0;
+                ">
+                    Jadwal Ibadah
+                </h3>
+
+
+                {{-- DAFTAR JADWAL --}}
+                <div style="
+                    margin-top: 18px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                ">
+
+                    @forelse ($worshipSchedules->take(3) as $schedule)
+
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 10px 12px;
+                            background: #f8fafc;
+                            border-radius: 10px;
+                        ">
+
+                            <div>
+
+                                <p style="
+                                    color: #111827;
+                                    font-size: .9rem;
+                                    font-weight: 600;
+                                    margin: 0;
+                                ">
+                                    {{ $schedule->name }}
+                                </p>
+
+                                <p style="
+                                    color: #9ca3af;
+                                    font-size: .75rem;
+                                    margin: 3px 0 0;
+                                ">
+                                    {{ $schedule->day }}
+                                </p>
+
+                            </div>
+
+
+                            <span style="
+                                color: #2563eb;
+                                font-size: .8rem;
+                                font-weight: 600;
+                            ">
+                                {{ \Carbon\Carbon::parse($schedule->start_time)->format('H:i') }}
+
+                                @if ($schedule->end_time)
+                                    - {{ \Carbon\Carbon::parse($schedule->end_time)->format('H:i') }}
+                                @endif
+                            </span>
+
+                        </div>
+
+                    @empty
+
+                        <p style="
+                            color: #9ca3af;
+                            font-size: .85rem;
+                            margin: 5px 0;
+                        ">
+                            Belum ada jadwal ibadah.
+                        </p>
+
+                    @endforelse
+
+                </div>
+
+
+                {{-- LINK --}}
+                <div style="
+                    margin-top: auto;
+                    padding-top: 18px;
+                    color: #2563eb;
+                    font-size: .9rem;
+                    font-weight: 700;
+                ">
+                    Lihat Jadwal Ibadah →
+                </div>
+
+            </div>
+
+        </a>
 
         {{-- CARD 1 — ULANG TAHUN JEMAAT --}}
         <a href="{{ url('/ulang-tahun') }}"
@@ -1368,7 +1540,7 @@
                 <div style="
                     margin-top: 28px;
                 ">
-                    <a href="#"
+                    <a href="https://wa.me/6281289193033?text=Halo%20GPIJS%20Jakpus%2C%20saya%20ingin%20bertanya%20mengenai%20informasi%20jerum."
                     style="
                         display: inline-flex;
                         align-items: center;

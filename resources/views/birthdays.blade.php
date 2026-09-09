@@ -69,9 +69,27 @@
                         Selamat Ulang Tahun
                     </p>
 
-                    <h2>
-                        {{ $jemaat->name }}
-                    </h2>
+                    @php
+                    $displayName = $jemaat->name;
+
+                    if ($jemaat->birth_date) {
+                        $age = $jemaat->birth_date->age;
+
+                        if ($age > 40) {
+                            if ($jemaat->gender === 'male') {
+                                $displayName = 'Pak ' . $jemaat->name;
+                            } elseif ($jemaat->gender === 'female') {
+                                $displayName = 'Bu ' . $jemaat->name;
+                            }
+                        } elseif ($age > 20) {
+                            $displayName = 'Kak ' . $jemaat->name;
+                        }
+                    }
+                @endphp
+
+                <h2>
+                    {{ $displayName }}
+                </h2>
 
                     <div class="birthday-date">
                         {{ $jemaat->birth_date->translatedFormat('d F Y') }}

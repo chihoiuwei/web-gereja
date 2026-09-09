@@ -12,6 +12,7 @@ class Jemaat extends Model
         'name',
         'photo',
         'birth_date',
+        'gender',
         'phone',
         'address',
         'bio',
