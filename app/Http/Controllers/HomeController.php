@@ -92,4 +92,22 @@ class HomeController extends Controller
 
         return view('penatalayan', compact('penatalayan'));
     }
+
+    public function gallery() {
+        $albums = GalleryAlbum::with('photos')
+            ->where('is_active', true)
+            ->latest('taken_at')
+            ->get();
+
+        return view('gallery', compact('albums'));
+    }
+    public function galleryShow(GalleryAlbum $album) {
+        if (!$album->is_active) {
+            abort(404);
+        }
+
+        $album->load('photos');
+
+        return view('gallery-show', compact('album'));
+    }
 }

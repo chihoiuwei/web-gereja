@@ -10,13 +10,42 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+               <!-- Navigation Links -->
+                <div class="hidden space-x-6 lg:-my-px lg:ms-10 lg:flex items-center">
+
+                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                        Dashboard
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.jemaats.index')" :active="request()->routeIs('admin.jemaats.*')">
+                        Jemaat
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.ministries.index')" :active="request()->routeIs('admin.ministries.*')">
+                        Bidang Pelayanan
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.ministry-members.index')" :active="request()->routeIs('admin.ministry-members.*')">
+                        Penatalayan
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.worship-schedules.index')" :active="request()->routeIs('admin.worship-schedules.*')">
+                        Jadwal Ibadah
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.news.index')" :active="request()->routeIs('admin.news.*')">
+                        Berita
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.events.index')" :active="request()->routeIs('admin.events.*')">
+                        Event
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('admin.galleries.index')" :active="request()->routeIs('admin.galleries.*')">
+                        Gallery
+                    </x-nav-link>
+
                 </div>
-            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -53,7 +82,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
+            <div class="-me-2 flex items-center lg:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -65,13 +94,41 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1 overflow-y-auto">
             <button @click="open = false" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700" aria-label="Close menu">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+          <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                Dashboard
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.jemaats.index')">
+                Jemaat
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.ministries.index')">
+                Bidang Pelayanan
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.ministry-members.index')">
+                Penatalayan
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.worship-schedules.index')">
+                Jadwal Ibadah
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.news.index')">
+                Berita
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.events.index')">
+                Event
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.galleries.index')">
+                Gallery
             </x-responsive-nav-link>
         </div>
 

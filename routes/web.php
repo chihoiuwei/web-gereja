@@ -23,6 +23,10 @@ Route::get('/event', [HomeController::class, 'events'])
     ->name('events');
 Route::get('/penatalayan', [HomeController::class, 'penatalayan'])
     ->name('penatalayan');
+Route::get('/galeri', [HomeController::class, 'gallery'])
+    ->name('gallery');
+Route::get('/galeri/{album}', [HomeController::class, 'galleryShow'])
+    ->name('gallery.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

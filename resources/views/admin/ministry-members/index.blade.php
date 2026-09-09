@@ -20,7 +20,7 @@
 
         <a
             href="{{ route('admin.ministry-members.create') }}"
-            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            class="shrink-0 whitespace-nowrap bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
         >
             + Tambah Penatalayan
         </a>

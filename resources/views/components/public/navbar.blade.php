@@ -18,7 +18,9 @@
             <a href="{{ url('/#penatalayan') }}" class="nav-link">Penatalayan</a>
             <a href="{{ url('/#jerum') }}" class="nav-link">Jerum</a>
             <a href="{{ url('/#pemuda') }}" class="nav-link">Pemuda</a>
+            <a href="{{ route('gallery') }}" class="nav-link">Galeri</a>
             <a href="{{ url('/#contact') }}" class="nav-link">Contact Us</a>
+            <a href="{{ route('login') }}" class="nav-link">Login Admin</a>
         </nav>
 
         {{-- BURGER MOBILE --}}
@@ -47,7 +49,9 @@
         <a href="#penatalayan">Penatalayan</a>
         <a href="#jerum">Jerum</a>
         <a href="#pemuda">Pemuda</a>
+        <a href="{{ route('gallery') }}">Galeri</a>
         <a href="#contact">Contact Us</a>
+        <a href="{{ route('login') }}">Login Admin</a>
 
     </div>
 
