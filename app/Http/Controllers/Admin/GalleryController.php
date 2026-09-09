@@ -28,7 +28,7 @@ class GalleryController extends Controller
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'photos' => ['required', 'array', 'min:1'],
-            'photos.*' => ['required', 'image', 'max:2048'],
+            'photos.*' => ['required', 'image', 'max:5120'],
             'description' => ['nullable', 'string'],
             'taken_at' => ['nullable', 'date'],
         ]);
@@ -104,7 +104,7 @@ class GalleryController extends Controller
     {
         $validated = $request->validate([
             'photos' => ['required', 'array', 'min:1'],
-            'photos.*' => ['required', 'image', 'max:2048'],
+            'photos.*' => ['required', 'image', 'max:5120'],
         ]);
 
         foreach ($request->file('photos') as $photo) {
