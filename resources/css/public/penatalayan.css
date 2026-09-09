@@ -1,0 +1,310 @@
+/* ============================================================
+   PENATALAYAN — resources/views/penatalayan.blade.php
+   (Meet the Team page)
+============================================================ */
+
+.team-page {
+    min-height: 100vh;
+
+    padding: 90px 5% 110px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #eef6ff 0%,
+            #ffffff 45%,
+            #f8fafc 100%
+        );
+}
+
+
+/* HEADER */
+
+.team-header {
+    max-width: 800px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.team-label {
+    margin: 0 0 12px;
+
+    color: #2563eb;
+
+    font-size: .8rem;
+    font-weight: 800;
+
+    letter-spacing: .2em;
+}
+
+.team-header h1 {
+    margin: 0;
+
+    color: #082d66;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+
+    font-weight: 900;
+
+    line-height: 1.1;
+}
+
+.team-subtitle {
+    max-width: 600px;
+
+    margin: 20px auto 0;
+
+    color: #64748b;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* BACK BUTTON */
+
+.team-back-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    background: #082d66;
+
+    color: #fff;
+
+    font-size: .85rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.team-back-button:hover {
+    background: #174f91;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(8,45,102,.18);
+}
+
+
+/* GRID */
+
+.team-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+
+/* CARD */
+
+.team-card {
+    overflow: hidden;
+
+    background: rgba(255,255,255,.96);
+
+    border: 1px solid #e8eef6;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(15,23,42,.08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,.13);
+}
+
+
+/* FOTO */
+
+.team-photo {
+    width: 100%;
+
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
+    overflow: hidden;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.team-no-photo {
+    color: #94a3b8;
+
+    font-size: 4rem;
+}
+
+
+/* CONTENT */
+
+.team-content {
+    padding: 24px 20px 26px;
+
+    text-align: center;
+}
+
+.team-content h2 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 1.1rem;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+.team-ministry {
+    margin: 9px 0 0;
+
+    color: #2563eb;
+
+    font-size: .82rem;
+
+    font-weight: 800;
+}
+
+.team-position {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: .85rem;
+
+    line-height: 1.5;
+}
+
+
+/* EMPTY */
+
+.team-empty {
+    grid-column: 1 / -1;
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border-radius: 22px;
+
+    box-shadow: 0 12px 35px rgba(15,23,42,.07);
+}
+
+.team-empty-icon {
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+}
+
+.team-empty h2 {
+    margin: 0;
+
+    color: #082d66;
+
+    font-size: 1.7rem;
+}
+
+.team-empty p {
+    margin-top: 10px;
+
+    color: #64748b;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .team-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 22px;
+    }
+
+}
+
+
+/* HP */
+
+@media (max-width: 600px) {
+
+    .team-page {
+        padding: 55px 5% 70px;
+    }
+
+    .team-header {
+        margin-bottom: 40px;
+    }
+
+    .team-header h1 {
+        font-size: 2.7rem;
+    }
+
+    .team-subtitle {
+        font-size: .9rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .team-photo {
+        height: 280px;
+    }
+
+}

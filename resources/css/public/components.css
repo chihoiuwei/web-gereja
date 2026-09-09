@@ -1,0 +1,118 @@
+/* ============================================================
+   COMPONENTS — Footer
+   Digunakan oleh SEMUA halaman public via components/public/footer.blade.php
+============================================================ */
+
+.site-footer {
+    background: #0b338a;
+    color: #fff;
+    padding: 70px 2.5rem 0;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 55px;
+}
+
+.footer-column h3 {
+    margin: 0 0 18px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.footer-logo {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    max-width: 330px;
+    margin: 0;
+    color: rgba(255, 255, 255, .8);
+    line-height: 1.7;
+}
+
+.footer-column p {
+    margin: 0 0 12px;
+    color: rgba(255, 255, 255, .8);
+    line-height: 1.7;
+}
+
+.footer-location-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: opacity .2s;
+}
+
+.footer-location-link:hover {
+    opacity: .75;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.footer-social:hover {
+    background: #fff;
+    color: #0b338a;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    padding: 22px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, .65);
+    font-size: .85rem;
+}
+
+
+/* FOOTER MOBILE */
+
+@media (max-width: 800px) {
+
+    .site-footer {
+        padding: 55px 1.5rem 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+}

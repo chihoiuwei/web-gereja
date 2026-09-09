@@ -1,0 +1,1140 @@
+<style>
+
+    /* ============================================================
+   FOOTER
+============================================================ */
+
+.site-footer {
+    background: #0b338a;
+    color: #fff;
+    padding: 70px 2.5rem 0;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 70px;
+    padding-bottom: 55px;
+}
+
+.footer-column h3 {
+    margin: 0 0 18px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.footer-logo {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    max-width: 330px;
+    margin: 0;
+    color: rgba(255, 255, 255, .8);
+    line-height: 1.7;
+}
+
+.footer-column p {
+    margin: 0 0 12px;
+    color: rgba(255, 255, 255, .8);
+    line-height: 1.7;
+}
+
+.footer-location-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: opacity .2s;
+}
+
+.footer-location-link:hover {
+    opacity: .75;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.footer-social:hover {
+    background: #fff;
+    color: #0b338a;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    padding: 22px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, .65);
+    font-size: .85rem;
+}
+
+
+/* FOOTER MOBILE */
+
+@media (max-width: 800px) {
+
+    .site-footer {
+        padding: 55px 1.5rem 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+}
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+
+    .site-header {
+        position: relative;
+        z-index: 50;
+        width: 100%;
+        height: 98px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        box-sizing: border-box;
+    }
+
+    .site-logo img {
+        width: 170px;
+        height: auto;
+        display: block;
+    }
+
+    .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 5.8rem;
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        color: #fff;
+        text-decoration: none;
+        opacity: .9;
+        transition: opacity .2s;
+    }
+
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+
+    /* ============================================================
+       BURGER
+    ============================================================ */
+
+    .mobile-menu-button {
+        display: none;
+        width: 42px;
+        height: 42px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 7px;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin: 5px 0;
+        background: #fff;
+        border-radius: 999px;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+
+    .hero-dove {
+        position: absolute;
+        right: 30%;
+        top: 20%;
+        z-index: 25;
+        width: clamp(110px, 10vw, 155px);
+    }
+
+    .hero-dove img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .hero-reference {
+        position: absolute;
+        top: 37%;
+        left: 24rem;
+        z-index: 30;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: .14em;
+        white-space: nowrap;
+    }
+
+
+    .hero-fa {
+        position: absolute;
+        left: 23rem;
+        top: 37%;
+        z-index: 15;
+
+        font-size: clamp(180px, 21vw, 310px);
+        font-weight: 900;
+        line-height: .88;
+
+        color: rgba(255,255,255,.95);
+
+        font-family: 'Arial Black', Arial, sans-serif;
+
+        user-select: none;
+    }
+
+
+    .hero-th {
+        position: absolute;
+        right: 22rem;
+        top: 37%;
+        z-index: 15;
+
+        font-size: clamp(180px, 21vw, 310px);
+        font-weight: 900;
+        line-height: .88;
+
+        color: rgba(255,255,255,.95);
+
+        font-family: 'Arial Black', Arial, sans-serif;
+
+        user-select: none;
+    }
+
+
+    .hero-cross {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        z-index: 20;
+
+        width: clamp(500px, 62%, 860px);
+    }
+
+    .hero-cross img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .hero-text-left {
+        position: absolute;
+        left: 23rem;
+        bottom: 20%;
+        z-index: 30;
+        max-width: 330px;
+    }
+
+    .hero-text-left p,
+    .hero-text-right p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        color: rgba(255,255,255,.95);
+    }
+
+
+    .hero-text-right {
+        position: absolute;
+        right: 22rem;
+        bottom: 20%;
+        z-index: 30;
+        max-width: 340px;
+        text-align: right;
+    }
+
+
+    /* ============================================================
+       STRIP
+    ============================================================ */
+
+    .bottom-strip {
+        background: #f5f5f5;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .bottom-strip-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.75rem 2.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+    }
+
+    .strip-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        white-space: nowrap;
+    }
+
+    .strip-item span {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        letter-spacing: .22em;
+        color: #1f2937;
+        font-size: .95rem;
+    }
+
+    .strip-item img {
+        width: 30px;
+        height: auto;
+        display: block;
+    }
+
+
+    /* ============================================================
+       TABLET + HP
+    ============================================================ */
+
+    @media (max-width: 1700px) {
+
+        .site-header {
+            height: 82px;
+            padding: 0 1.5rem;
+        }
+
+        .site-logo img {
+            width: 130px;
+        }
+
+        .desktop-nav {
+            display: none;
+        }
+
+        .mobile-menu-button {
+            display: block;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            top: 82px;
+            left: 0;
+            right: 0;
+
+            z-index: 100;
+
+            background: rgba(8, 43, 115, .98);
+
+            padding: 15px 25px;
+
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 5px;
+
+            border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+
+
+        /* Hero */
+
+        #hero {
+            height: calc(100vh - 82px) !important;
+            min-height: 620px;
+        }
+
+
+        /* FA */
+        .hero-fa {
+            left: 37%;
+            top: 34%;
+
+            transform: translateX(-100%);
+
+            font-size: clamp(90px, 18vw, 180px);
+
+            z-index: 15;
+        }
+
+
+        /* TH */
+        .hero-th {
+            right: 43%;
+            top: 34%;
+
+            transform: translateX(100%);
+
+            font-size: clamp(90px, 18vw, 180px);
+
+            z-index: 15;
+        }
+
+
+        /* Referensi */
+        .hero-reference {
+            top: 33%;
+            left: 27%;
+
+            transform: translateX(-50%);
+
+            font-size: clamp(.75rem, 2vw, 1rem);
+
+            letter-spacing: .08em;
+        }
+
+
+        /* Salib mengecil dan tetap tengah */
+        .hero-cross {
+            top: 43%;
+            width: clamp(350px, 42%, 560px);
+        }
+
+
+        /* Merpati */
+        .hero-dove {
+            right: 35%;
+            top: 23%;
+
+            width: clamp(70px, 12vw, 120px);
+        }
+
+
+        /* Ayat kiri */
+        .hero-text-left {
+            left: 18%;
+            bottom: 32%;
+            max-width: 25%;
+        }
+
+        .hero-text-left p,
+        .hero-text-right p {
+            font-size: clamp(.7rem, 1.8vw, 1rem);
+            line-height: 1.6;
+        }
+
+
+        /* Ayat kanan */
+        .hero-text-right {
+            right: 25%;
+            bottom: 30%;
+
+            max-width: 25%;
+        }
+
+
+        /* Strip */
+        .bottom-strip-inner {
+            padding: 1.2rem 1.5rem;
+            gap: 15px;
+        }
+
+        .strip-item {
+            gap: 15px;
+        }
+
+        .strip-item span {
+            font-size: clamp(.65rem, 1.5vw, .9rem);
+            letter-spacing: .12em;
+        }
+
+        .strip-item img {
+            width: clamp(18px, 3vw, 28px);
+        }
+
+    }
+
+
+    /* ============================================================
+       HP
+    ============================================================ */
+
+    @media (max-width: 800px) {
+
+        .site-header {
+            height: 72px;
+            padding: 0 1rem;
+        }
+
+        .site-logo img {
+            width: 110px;
+        }
+
+        .mobile-menu {
+            top: 72px;
+        }
+
+
+        #hero {
+            height: 620px !important;
+            min-height: 620px;
+        }
+
+
+        /* Referensi */
+        .hero-reference {
+            top: 28%;
+            left: 18%;
+            font-size: .7rem;
+        }
+
+
+        /* FA */
+        .hero-fa {
+            left: 30%;
+            top: 30%;
+
+            transform: translateX(-96%);
+
+            font-size: clamp(75px, 18vw, 105px);
+        }
+
+
+        /* TH */
+        .hero-th {
+            right: 35%;
+            top: 30%;
+            transform: translateX(96%);
+            font-size: clamp(75px, 18vw, 105px);
+        }
+
+
+        /* Salib */
+        .hero-cross {
+            top: 37%;
+            width: 92vw;
+            max-width: 280px;
+        }
+
+
+        /* Merpati */
+        .hero-dove {
+            right: 25%;
+            top: 18%;
+
+            width: 65px;
+        }
+
+
+        /* Ayat kiri */
+        .hero-text-left {
+            left: 3%;
+            bottom: 15%;
+            font-size: .4rem !important;
+            max-width: 39%;
+        }
+
+
+        /* Ayat kanan */
+        .hero-text-right {
+            right: 5%;
+            bottom: 10%;
+
+            max-width: 39%;
+        }
+
+        .hero-text-left p,
+        .hero-text-right p {
+            font-size: .65rem;
+            line-height: 1.5;
+        }
+
+
+        /* Strip */
+        .bottom-strip-inner {
+            padding: 1rem;
+            gap: 10px;
+        }
+
+        .strip-item {
+            gap: 8px;
+        }
+
+        .strip-item span {
+            font-size: .55rem;
+            letter-spacing: .08em;
+        }
+
+        .strip-item img {
+            width: 18px;
+        }
+
+    }
+
+
+    //// ============================================================
+    //// About Us Section
+    //// ============================================================   
+
+    /* ============================================================
+   ABOUT US
+============================================================ */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 1000px;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+
+/* BACKGROUND
+
+.about-background {
+    position: absolute;
+    inset: 0;
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    z-index: 0;
+    pointer-events: none;
+} */
+
+
+
+/* CONTENT */
+
+.about-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 70px 8% 60px;
+}
+
+
+/* TITLE */
+
+.about-title span {
+    display: block;
+
+    font-family: cursive;
+    font-size: 4rem;
+
+    color: #1d4f91;
+}
+
+.about-title h2 {
+    margin-top: -25px;
+
+    font-family: Georgia, serif;
+    font-size: 6rem;
+    font-weight: 900;
+
+    color: #082d66;
+}
+
+
+/* DESCRIPTION */
+
+.about-description {
+    width: 43%;
+
+    margin-top: 20px;
+
+    color: #142b4a;
+
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+.about-description p + p {
+    margin-top: 12px;
+}
+
+.about-description strong {
+    color: #164e8c;
+}
+
+
+/* TIMELINE */
+
+.about-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin-top: 120px;
+
+    position: relative;
+}
+
+.about-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+    top: 25px;
+
+    height: 4px;
+
+    background: #1d5fa7;
+
+    z-index: -1;
+}
+
+
+.timeline-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 12px;
+
+    border: 4px solid #1d5fa7;
+
+    border-radius: 50%;
+
+    background: #fff;
+}
+
+.timeline-item strong {
+    display: block;
+
+    font-size: 2rem;
+    font-weight: 900;
+
+    color: #174f91;
+}
+
+.timeline-item span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-weight: 700;
+
+    color: #142b4a;
+}
+
+.timeline-item p {
+    margin-top: 10px;
+
+    font-size: .95rem;
+    line-height: 1.5;
+
+    color: #1e293b;
+}
+
+
+/* QUOTE */
+
+.about-quote {
+    max-width: 800px;
+
+    margin: 50px auto 0;
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: 2rem;
+    line-height: 1.4;
+
+    color: #173f78;
+}
+
+.about-quote span {
+    color: #e9ae22;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+/* ============================================================
+   ABOUT US — TABLET + HP
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .about-section {
+        min-height: auto;
+    }
+
+    .about-background {
+        background-size: auto 100%;
+        background-position: center top;
+    }
+
+    .about-content {
+        padding: 50px 6% 50px;
+    }
+
+
+    /* JUDUL */
+
+    .about-title span {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .about-title h2 {
+        font-size: clamp(3.5rem, 9vw, 6rem);
+        margin-top: -15px;
+    }
+
+
+    /* DESKRIPSI */
+
+    .about-description {
+        width: 55%;
+        font-size: clamp(.9rem, 2vw, 1.15rem);
+    }
+
+
+    /* TIMELINE */
+
+    .about-timeline {
+        margin-top: 80px;
+    }
+
+    .timeline-item {
+        padding: 0 8px;
+    }
+
+    .timeline-item strong {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .timeline-item span {
+        font-size: clamp(.65rem, 1.5vw, .9rem);
+    }
+
+    .timeline-item p {
+        font-size: clamp(.65rem, 1.5vw, .95rem);
+    }
+
+
+    /* QUOTE */
+
+    .about-quote {
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        max-width: 70%;
+    }
+
+}
+
+
+/* ============================================================
+   ABOUT US — HP
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .about-content {
+        padding: 40px 7% 45px;
+    }
+
+
+    /* JUDUL */
+
+    .about-title span {
+        font-size: 2.3rem;
+    }
+
+    .about-title h2 {
+        font-size: 3.5rem;
+        margin-top: -10px;
+    }
+
+
+    /* DESKRIPSI */
+
+    .about-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+
+    /* TIMELINE */
+
+    .about-timeline {
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 35px;
+    }
+
+
+    .about-timeline::before {
+        left: 25px;
+        right: auto;
+
+        top: 25px;
+        bottom: 25px;
+
+        width: 3px;
+        height: auto;
+    }
+
+
+    .timeline-item {
+        display: grid;
+
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+
+        text-align: left;
+
+        padding: 0;
+        position: relative;
+    }
+
+
+    .timeline-item::before {
+        grid-row: 1 / 3;
+        grid-column: 1;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0 auto;
+
+        border-width: 3px;
+    }
+
+
+    .timeline-item strong {
+        grid-column: 2;
+
+        font-size: 1.5rem;
+    }
+
+
+    .timeline-item span {
+        grid-column: 2;
+
+        font-size: .75rem;
+    }
+
+
+    .timeline-item p {
+        grid-column: 2;
+
+        font-size: .8rem;
+        line-height: 1.5;
+
+        margin-top: 5px;
+    }
+
+
+    /* QUOTE */
+
+    .about-quote {
+        max-width: 90%;
+
+        margin-top: 45px;
+
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .about-quote span {
+        font-size: 2.5rem;
+    }
+
+}
+
+/* ============================================================
+   WARTA CAROUSEL
+============================================================ */
+
+/* ============================================================
+   WARTA CAROUSEL
+============================================================ */
+
+.warta-carousel {
+    position: relative;
+    width: 100%;
+}
+
+
+/* TRACK DESKTOP */
+
+.warta-track {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+
+/* ============================================================
+   TOMBOL
+============================================================ */
+
+.warta-arrow {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 999;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.18);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+.warta-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.warta-arrow:active {
+    transform: translateY(-50%) scale(.95);
+}
+
+
+/* ============================================================
+   HP
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .warta-carousel {
+        position: relative;
+        padding: 0 24px;
+    }
+
+
+    .warta-track {
+        display: flex;
+
+        width: 100%;
+
+        gap: 0;
+
+        overflow: hidden;
+
+        position: relative;
+        z-index: 1;
+
+        touch-action: pan-y;
+    }
+
+
+    .warta-track > * {
+        min-width: 100%;
+        width: 100%;
+
+        flex: 0 0 100%;
+    }
+
+
+    /* TOMBOL TAMPIL DI HP */
+
+    .warta-arrow {
+        display: flex;
+    }
+
+
+    .warta-prev {
+        left: -2px;
+    }
+
+
+    .warta-next {
+        right: -2px;
+    }
+
+}
+
+</style>

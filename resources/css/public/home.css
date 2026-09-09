@@ -1,0 +1,1771 @@
+/* ============================================================
+   HOME — welcome.blade.php
+   Seluruh CSS khusus halaman Home
+============================================================ */
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.hero-dove {
+    position: absolute;
+    right: 30%;
+    top: 20%;
+    z-index: 25;
+    width: clamp(110px, 10vw, 155px);
+    transition: transform .15s ease-out;
+    will-change: transform;
+}
+
+.hero-dove img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.hero-reference {
+    position: absolute;
+    top: 37%;
+    left: 24rem;
+    z-index: 30;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    white-space: nowrap;
+}
+
+.hero-fa {
+    position: absolute;
+    left: 23rem;
+    top: 37%;
+    z-index: 15;
+
+    font-size: clamp(180px, 21vw, 310px);
+    font-weight: 900;
+    line-height: .88;
+
+    color: rgba(255,255,255,.95);
+
+    font-family: 'Arial Black', Arial, sans-serif;
+
+    user-select: none;
+}
+
+.hero-th {
+    position: absolute;
+    right: 22rem;
+    top: 37%;
+    z-index: 15;
+
+    font-size: clamp(180px, 21vw, 310px);
+    font-weight: 900;
+    line-height: .88;
+
+    color: rgba(255,255,255,.95);
+
+    font-family: 'Arial Black', Arial, sans-serif;
+
+    user-select: none;
+}
+
+.hero-cross {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    width: clamp(500px, 62%, 860px);
+}
+
+.hero-cross img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text-left {
+    position: absolute;
+    left: 23rem;
+    bottom: 20%;
+    z-index: 30;
+    max-width: 330px;
+}
+
+.hero-text-left p,
+.hero-text-right p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,.95);
+}
+
+.hero-text-right {
+    position: absolute;
+    right: 22rem;
+    bottom: 20%;
+    z-index: 30;
+    max-width: 340px;
+    text-align: right;
+}
+
+
+/* ============================================================
+   STRIP BAWAH — RUNNING TEXT / MARQUEE
+============================================================ */
+
+.bottom-strip {
+    width: 100%;
+    overflow: hidden;
+
+    background: #fff;
+
+    padding: 22px 0;
+}
+
+.bottom-strip-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: stripMarquee 22s linear infinite;
+    will-change: transform;
+}
+
+.bottom-strip-inner {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 140px;
+
+    padding-right: 140px;
+
+    box-sizing: border-box;
+}
+
+.strip-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+}
+
+.strip-item span {
+    color: #1e293b;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    white-space: nowrap;
+}
+
+.strip-item img {
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ANIMASI MARQUEE */
+
+@keyframes stripMarquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .bottom-strip {
+        padding: 18px 0;
+    }
+
+    .bottom-strip-inner {
+        gap: 70px;
+
+        padding-right: 0;
+    }
+
+    .strip-item {
+        gap: 20px;
+    }
+
+    .strip-item span {
+        font-size: 11px;
+
+        letter-spacing: .15em;
+    }
+
+    .strip-item img {
+        width: 14px;
+        height: 14px;
+    }
+
+}
+
+
+/* ============================================================
+   ABOUT US — SEJARAH
+============================================================ */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 1000px;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 70px 8% 60px;
+}
+
+.about-title span {
+    display: block;
+
+    font-family: cursive;
+    font-size: 4rem;
+
+    color: #1d4f91;
+}
+
+.about-title h2 {
+    margin-top: -25px;
+
+    font-family: Georgia, serif;
+    font-size: 6rem;
+    font-weight: 900;
+
+    color: #082d66;
+}
+
+.about-description {
+    width: 43%;
+
+    margin-top: 20px;
+
+    color: #142b4a;
+
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+.about-description p + p {
+    margin-top: 12px;
+}
+
+.about-description strong {
+    color: #164e8c;
+}
+
+
+/* TIMELINE */
+
+.about-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin-top: 120px;
+
+    position: relative;
+}
+
+.about-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 5%;
+    right: 5%;
+    top: 25px;
+
+    height: 4px;
+
+    background: #1d5fa7;
+
+    z-index: -1;
+}
+
+.timeline-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 12px;
+
+    border: 4px solid #1d5fa7;
+
+    border-radius: 50%;
+
+    background: #fff;
+}
+
+.timeline-item strong {
+    display: block;
+
+    font-size: 2rem;
+    font-weight: 900;
+
+    color: #174f91;
+}
+
+.timeline-item span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-weight: 700;
+
+    color: #142b4a;
+}
+
+.timeline-item p {
+    margin-top: 10px;
+
+    font-size: .95rem;
+    line-height: 1.5;
+
+    color: #1e293b;
+}
+
+
+/* QUOTE */
+
+.about-quote {
+    max-width: 800px;
+
+    margin: 50px auto 0;
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: 2rem;
+    line-height: 1.4;
+
+    color: #173f78;
+}
+
+.about-quote span {
+    color: #e9ae22;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+
+/* ABOUT TABLET */
+
+@media (max-width: 1000px) {
+
+    .about-section {
+        min-height: auto;
+    }
+
+    .about-background {
+        background-size: auto 100%;
+        background-position: center top;
+    }
+
+    .about-content {
+        padding: 50px 6% 50px;
+    }
+
+    .about-title span {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .about-title h2 {
+        font-size: clamp(3.5rem, 9vw, 6rem);
+        margin-top: -15px;
+    }
+
+    .about-description {
+        width: 55%;
+        font-size: clamp(.9rem, 2vw, 1.15rem);
+    }
+
+    .about-timeline {
+        margin-top: 80px;
+    }
+
+    .timeline-item {
+        padding: 0 8px;
+    }
+
+    .timeline-item strong {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .timeline-item span {
+        font-size: clamp(.65rem, 1.5vw, .9rem);
+    }
+
+    .timeline-item p {
+        font-size: clamp(.65rem, 1.5vw, .95rem);
+    }
+
+    .about-quote {
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        max-width: 70%;
+    }
+
+}
+
+
+/* ABOUT HP */
+
+@media (max-width: 600px) {
+
+    .about-content {
+        padding: 40px 7% 45px;
+    }
+
+    .about-title span {
+        font-size: 2.3rem;
+    }
+
+    .about-title h2 {
+        font-size: 3.5rem;
+        margin-top: -10px;
+    }
+
+    .about-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .about-timeline {
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 35px;
+    }
+
+    .about-timeline::before {
+        left: 25px;
+        right: auto;
+
+        top: 25px;
+        bottom: 25px;
+
+        width: 3px;
+        height: auto;
+    }
+
+    .timeline-item {
+        display: grid;
+
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+
+        text-align: left;
+
+        padding: 0;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        grid-row: 1 / 3;
+        grid-column: 1;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0 auto;
+
+        border-width: 3px;
+    }
+
+    .timeline-item strong {
+        grid-column: 2;
+
+        font-size: 1.5rem;
+    }
+
+    .timeline-item span {
+        grid-column: 2;
+
+        font-size: .75rem;
+    }
+
+    .timeline-item p {
+        grid-column: 2;
+
+        font-size: .8rem;
+        line-height: 1.5;
+
+        margin-top: 5px;
+    }
+
+    .about-quote {
+        max-width: 90%;
+
+        margin-top: 45px;
+
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .about-quote span {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+/* ============================================================
+   VISI & MISI
+============================================================ */
+
+.vision-mission-section {
+    position: relative;
+
+    background-image:
+        url('/images/visi-misi-bg.png');
+
+    background-repeat: no-repeat;
+
+    background-position: center top;
+
+    background-size: cover;
+
+    padding: 70px 5% 100px;
+
+    overflow: hidden;
+}
+
+.vision-mission-container {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* HEADER VISI & MISI */
+
+.vm-header {
+    max-width: 900px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.vm-label {
+    margin: 0 0 10px;
+
+    color: #174f91;
+
+    font-size: .85rem;
+
+    font-weight: 800;
+
+    letter-spacing: .35em;
+}
+
+.vm-header h2 {
+    margin: 0;
+
+    color: #0b4388;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+}
+
+.vm-header h2 span {
+    display: block;
+
+    color: #e3a315;
+}
+
+.vm-divider {
+    width: 62px;
+
+    height: 5px;
+
+    margin: 18px auto;
+
+    background: #e3a315;
+
+    border-radius: 999px;
+}
+
+.vm-subtitle {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #174f91;
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+/* VISI CARD */
+
+.vm-vision-card {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 30px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(24,74,130,.12);
+}
+
+.vm-vision-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    flex-shrink: 0;
+}
+
+.vm-cross {
+    width: 80px;
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+}
+
+.vm-vision-title h3 {
+    margin: 0;
+
+    color: #0b4388;
+
+    font-family: Georgia, serif;
+
+    font-size: 3rem;
+
+    font-weight: 900;
+}
+
+.vm-vision-divider {
+    width: 2px;
+
+    height: 75px;
+
+    background: #e3a315;
+
+    flex-shrink: 0;
+}
+
+.vm-vision-card > p {
+    margin: 0;
+
+    color: #174f91;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.15rem;
+
+    line-height: 1.5;
+}
+
+.vm-vision-card strong {
+    color: #e3a315;
+}
+
+
+/* MISI HEADING */
+
+.vm-mission-heading {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 130px auto 130px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    max-width: 520px;
+
+    margin: 30px auto 0;
+
+    text-align: center;
+}
+
+.vm-heading-line {
+    height: 2px;
+
+    background: #e3a315;
+}
+
+.vm-mission-heading h3 {
+    margin: 0;
+
+    color: #0b4388;
+
+    font-family: Georgia, serif;
+
+    font-size: 2.5rem;
+
+    font-weight: 900;
+}
+
+.vm-mission-heading p {
+    position: absolute;
+
+    top: 48px;
+
+    left: 0;
+    right: 0;
+
+    margin: 0;
+
+    color: #174f91;
+
+    font-size: .7rem;
+
+    font-weight: 800;
+
+    letter-spacing: .3em;
+}
+
+
+/* GRID 4 MISI */
+
+.vm-mission-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 70px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.vm-mission-card {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 330px;
+
+    padding: 28px 25px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.vm-blue {
+    background: rgba(224,242,254,.82);
+}
+
+.vm-red {
+    background: rgba(254,235,235,.82);
+}
+
+.vm-yellow {
+    background: rgba(255,248,225,.86);
+}
+
+.vm-number {
+    position: absolute;
+
+    top: 12px;
+    left: 20px;
+
+    color: #3fa9e8;
+
+    font-family: Georgia, serif;
+
+    font-size: 3.5rem;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    opacity: .18;
+}
+
+.vm-red .vm-number {
+    color: #dc3030;
+}
+
+.vm-yellow .vm-number {
+    color: #e9a719;
+}
+
+.vm-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #3da8e8;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.vm-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.vm-icon.vm-red {
+    background: #ff3131;
+}
+
+.vm-icon.vm-yellow {
+    background: #f5b719;
+}
+
+.vm-red .vm-icon {
+    background: #ff3131;
+}
+
+.vm-yellow .vm-icon {
+    background: #f5b719;
+}
+
+.vm-mission-card h4 {
+    margin: 8px 0 12px;
+
+    color: #0b4388;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.3rem;
+
+    font-weight: 900;
+
+    line-height: 1.2;
+}
+
+.vm-mission-card p {
+    margin: 0;
+
+    color: #174f91;
+
+    font-size: .88rem;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+.vm-mission-card small {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #2563a6;
+
+    font-size: .67rem;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+.vm-mission-card ol {
+    margin: 8px 0 0;
+
+    padding-left: 22px;
+
+    color: #174f91;
+
+    font-size: .88rem;
+
+    line-height: 1.45;
+
+    text-align: left;
+}
+
+
+/* EMPAT PILAR */
+
+.vm-pillars {
+
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 28px auto 0;
+
+    padding: 20px 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        repeat(4, 1fr);
+
+    align-items: center;
+
+    background: rgba(255,255,255,.88);
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 10px 30px rgba(24,74,130,.08);
+}
+
+.vm-pillars-title {
+
+    padding-right: 30px;
+
+    text-align: left;
+
+    border-right:
+        1px solid rgba(227,163,21,.45);
+}
+
+.vm-pillars-title h3 {
+
+    margin: 0;
+
+    color: #0b4388;
+
+    font-family: Georgia, serif;
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    line-height: 1.1;
+}
+
+.vm-pillars-title p {
+
+    margin: 8px 0 0;
+
+    color: #174f91;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    line-height: 1.6;
+}
+
+.vm-pillar {
+
+    min-width: 0;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.vm-pillar + .vm-pillar {
+
+    border-left:
+        1px solid rgba(227,163,21,.35);
+}
+
+.vm-pillar .vm-icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.08);
+}
+
+.vm-pillar .vm-icon img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.vm-pillar span {
+
+    display: block;
+
+    color: #174f91;
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    text-align: center;
+}
+
+
+/* VISI MISI — TABLET */
+
+@media (max-width: 1000px) {
+
+    .vm-mission-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 700px;
+    }
+
+    .vm-pillars {
+
+        padding: 20px;
+
+        grid-template-columns:
+            1.2fr
+            repeat(4, 1fr);
+    }
+
+    .vm-pillars-title {
+
+        padding-right: 15px;
+    }
+
+    .vm-pillars-title h3 {
+
+        font-size: 1.6rem;
+    }
+
+    .vm-pillars-title p {
+
+        font-size: .55rem;
+    }
+
+    .vm-pillar {
+
+        padding: 0 10px;
+    }
+
+    .vm-pillar .vm-icon {
+
+        width: 60px;
+        height: 60px;
+    }
+
+    .vm-pillar span {
+
+        font-size: .85rem;
+    }
+
+    .vm-mission-heading {
+        grid-template-columns: 55px auto 55px;
+
+        gap: 15px;
+
+        margin-top: 25px;
+    }
+
+    .vm-mission-heading h3 {
+        font-size: 2rem;
+    }
+
+    .vm-mission-heading p {
+        top: 40px;
+
+        font-size: .58rem;
+
+        letter-spacing: .18em;
+
+        white-space: nowrap;
+    }
+
+    .vm-mission-grid {
+        margin-top: 60px;
+
+        gap: 18px;
+    }
+
+    .vm-mission-card {
+        width: 100%;
+
+        max-width: 360px;
+
+        min-height: auto;
+
+        padding: 28px 23px;
+    }
+
+    .vm-mission-card h4 {
+        font-size: 1.35rem;
+    }
+
+    .vm-mission-card p {
+        font-size: .9rem;
+    }
+
+}
+
+
+/* VISI MISI — HP */
+
+@media (max-width: 600px) {
+
+    .vm-mission-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 360px;
+
+        margin-top: 60px;
+
+        gap: 18px;
+    }
+
+    .vm-mission-card {
+        width: 100%;
+
+        max-width: 360px;
+    }
+
+    .vision-mission-section {
+        padding: 55px 5% 70px;
+
+        background-size: auto 100%;
+
+        background-position: center top;
+    }
+
+    .vm-header {
+        margin-bottom: 30px;
+    }
+
+    .vm-label {
+        font-size: .7rem;
+
+        letter-spacing: .25em;
+    }
+
+    .vm-header h2 {
+        font-size: 2.4rem;
+    }
+
+    .vm-subtitle {
+        font-size: .9rem;
+    }
+
+    .vm-vision-card {
+        padding: 25px 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .vm-vision-title {
+        justify-content: center;
+    }
+
+    .vm-vision-title h3 {
+        font-size: 2.3rem;
+    }
+
+    .vm-cross {
+        width: 62px;
+
+        height: 62px;
+
+        font-size: 2.4rem;
+    }
+
+    .vm-vision-divider {
+        width: 70px;
+
+        height: 2px;
+    }
+
+    .vm-vision-card > p {
+        font-size: .95rem;
+    }
+
+
+    /* EMPAT PILAR - HP */
+
+    .vm-pillars {
+        width: calc(100% - 32px);
+        max-width: 420px;
+
+        margin: 22px auto 0;
+        padding: 24px 18px;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 0;
+
+        box-sizing: border-box;
+    }
+
+    .vm-pillars-title {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        padding: 0 0 18px;
+        margin: 0 0 0;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(227,163,21,.35);
+
+        text-align: center;
+    }
+
+    .vm-pillars-title h3 {
+        margin: 0;
+
+        font-size: 1.7rem;
+    }
+
+    .vm-pillars-title p {
+        margin: 8px 0 0;
+
+        font-size: .55rem;
+        line-height: 1.5;
+    }
+
+    .vm-pillar {
+        width: 100%;
+        min-width: 0;
+
+        padding: 22px 10px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .vm-pillar:nth-child(3),
+    .vm-pillar:nth-child(5) {
+        border-left: none;
+    }
+
+    .vm-pillar:nth-child(2),
+    .vm-pillar:nth-child(4) {
+        border-left: 1px solid rgba(227,163,21,.30);
+    }
+
+    .vm-pillar:nth-child(4),
+    .vm-pillar:nth-child(5) {
+        border-top: 1px solid rgba(227,163,21,.25);
+    }
+
+    .vm-pillar .vm-icon {
+        width: 64px;
+        height: 64px;
+
+        margin: 0 auto 12px;
+    }
+
+    .vm-pillar span {
+        display: block;
+
+        width: 100%;
+        max-width: 120px;
+
+        margin: 0 auto;
+
+        color: #174f91;
+
+        font-family: Georgia, serif;
+
+        font-size: .95rem;
+        font-weight: 800;
+
+        line-height: 1.2;
+
+        text-align: center;
+
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+}
+
+
+/* ============================================================
+   WARTA CAROUSEL — Home only
+============================================================ */
+
+.warta-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.warta-track {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.warta-arrow {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 999;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.18);
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+.warta-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.warta-arrow:active {
+    transform: translateY(-50%) scale(.95);
+}
+
+
+/* WARTA CAROUSEL HP */
+
+@media (max-width: 600px) {
+
+    .warta-carousel {
+        position: relative;
+        padding: 0 24px;
+    }
+
+    .warta-track {
+        display: flex;
+
+        width: 100%;
+
+        gap: 0;
+
+        overflow: hidden;
+
+        position: relative;
+        z-index: 1;
+
+        touch-action: pan-y;
+    }
+
+    .warta-track > * {
+        min-width: 100%;
+        width: 100%;
+
+        flex: 0 0 100%;
+    }
+
+    .warta-arrow {
+        display: flex;
+    }
+
+    .warta-prev {
+        left: -2px;
+    }
+
+    .warta-next {
+        right: -2px;
+    }
+
+}
+
+
+/* ============================================================
+   JERUM — Jemaat Rumah
+============================================================ */
+
+.jerum-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.jerum-text {
+    max-width: 580px;
+}
+
+.jerum-media {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+
+    .jerum-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .jerum-text {
+        max-width: none;
+    }
+
+    .jerum-media {
+        order: -1;
+    }
+
+}
+
+
+/* ============================================================
+   PEMUDA
+============================================================ */
+
+.pemuda-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.pemuda-media {
+    order: 1;
+}
+
+.pemuda-text {
+    order: 2;
+}
+
+@media (max-width: 800px) {
+    .pemuda-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pemuda-media,
+    .pemuda-text {
+        order: initial;
+    }
+}
+
+
+/* ============================================================
+   HERO RESPONSIVE — TABLET (max-width: 1700px)
+============================================================ */
+
+@media (max-width: 1700px) {
+
+    #hero {
+        height: calc(100vh - 82px) !important;
+        min-height: 620px;
+    }
+
+    .hero-fa {
+        left: 37%;
+        top: 34%;
+
+        transform: translateX(-100%);
+
+        font-size: clamp(90px, 18vw, 180px);
+
+        z-index: 15;
+    }
+
+    .hero-th {
+        right: 43%;
+        top: 34%;
+
+        transform: translateX(100%);
+
+        font-size: clamp(90px, 18vw, 180px);
+
+        z-index: 15;
+    }
+
+    .hero-reference {
+        top: 33%;
+        left: 27%;
+
+        transform: translateX(-50%);
+
+        font-size: clamp(.75rem, 2vw, 1rem);
+
+        letter-spacing: .08em;
+    }
+
+    .hero-cross {
+        top: 43%;
+        width: clamp(350px, 42%, 560px);
+    }
+
+    .hero-dove {
+        right: 35%;
+        top: 23%;
+        transition: transform 0.15s ease-out;
+        will-change: transform;
+        width: clamp(70px, 12vw, 120px);
+    }
+
+    .hero-text-left {
+        left: 18%;
+        bottom: 32%;
+        max-width: 25%;
+    }
+
+    .hero-text-left p,
+    .hero-text-right p {
+        font-size: clamp(.7rem, 1.8vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .hero-text-right {
+        right: 25%;
+        bottom: 30%;
+
+        max-width: 25%;
+    }
+
+}
+
+
+/* HERO HP (max-width: 800px) */
+
+@media (max-width: 800px) {
+
+    #hero {
+        height: 620px !important;
+        min-height: 620px;
+    }
+
+    .hero-reference {
+        top: 28%;
+        left: 18%;
+        font-size: .7rem;
+    }
+
+    .hero-fa {
+        left: 30%;
+        top: 30%;
+
+        transform: translateX(-96%);
+
+        font-size: clamp(75px, 18vw, 105px);
+    }
+
+    .hero-th {
+        right: 35%;
+        top: 30%;
+        transform: translateX(96%);
+        font-size: clamp(75px, 18vw, 105px);
+    }
+
+    .hero-cross {
+        top: 37%;
+        width: 92vw;
+        max-width: 280px;
+    }
+
+    .hero-dove {
+        right: 25%;
+        top: 18%;
+
+        width: 65px;
+        transition: transform 0.15s ease-out;
+        will-change: transform;
+    }
+
+    .hero-text-left {
+        left: 3%;
+        bottom: 15%;
+        font-size: .4rem !important;
+        max-width: 39%;
+    }
+
+    .hero-text-right {
+        right: 5%;
+        bottom: 10%;
+
+        max-width: 39%;
+    }
+
+    .hero-text-left p,
+    .hero-text-right p {
+        font-size: .65rem;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* ============================================================
+   PENATALAYAN SECTION — Home only (section preview di welcome)
+============================================================ */
+
+.penatalayan-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.penatalayan-grid > div {
+    width: 220px;
+}
+
+@keyframes fotoMuncul {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* ============================================================
+   HP (max-width: 800px) – Penatalayan grid adjustments
+   ------------------------------------------------------------ */
+@media (max-width: 800px) {
+    .penatalayan-mobile-hidden {
+        display: none !important;
+    }
+    /* Show only first 4 grid items on mobile */
+    .penatalayan-grid > div:nth-child(n+5) {
+        display: none !important;
+    }
+}

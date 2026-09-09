@@ -1,0 +1,147 @@
+/* ============================================================
+   NAVBAR
+   Digunakan oleh SEMUA halaman public via layouts/public.blade.php
+============================================================ */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 98px;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    background: #1248a8;
+}
+
+.site-logo img {
+    width: 170px;
+    height: auto;
+    display: block;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 5.8rem;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    opacity: .9;
+    transition: opacity .2s;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   BURGER / HAMBURGER
+============================================================ */
+
+.mobile-menu-button {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.mobile-menu-button span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    background: #fff;
+    border-radius: 999px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ============================================================
+   TABLET + HP  (max-width: 1700px)
+============================================================ */
+
+@media (max-width: 1700px) {
+
+    .site-header {
+        height: 82px;
+        padding: 0 1.5rem;
+    }
+
+    .site-logo img {
+        width: 130px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        right: 0;
+
+        z-index: 100;
+
+        background: rgba(8, 43, 115, .98);
+
+        padding: 15px 25px;
+
+        flex-direction: column;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 5px;
+
+        border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+}
+
+
+/* ============================================================
+   HP  (max-width: 800px)
+============================================================ */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        height: 72px;
+        padding: 0 1rem;
+    }
+
+    .site-logo img {
+        width: 110px;
+    }
+
+    .mobile-menu {
+        top: 72px;
+    }
+
+}
