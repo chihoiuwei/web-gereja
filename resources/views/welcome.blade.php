@@ -1344,12 +1344,7 @@
 
 
         {{-- CARDS --}}
-    <div class="penatalayan-grid" style="
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px;
-    ">
+ <div class="penatalayan-grid">
 
            @forelse ($penatalayan->take(7) as $member)
 

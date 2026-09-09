@@ -32,7 +32,7 @@
 
 
     {{-- DAFTAR JADWAL --}}
-    <div class="worship-grid">
+    <div class="worship-grid" id="worshipGrid">
 
         @forelse ($worshipSchedules as $schedule)
 
@@ -121,7 +121,33 @@
 
     </div>
 
+    {{-- TOMBOL CAROUSEL KHUSUS HP --}}
+@if ($worshipSchedules->count() > 1)
+
+    <div class="worship-mobile-nav">
+
+        <button
+            type="button"
+            id="worshipPagePrev"
+            onclick="previousWorshipCard()"
+            aria-label="Jadwal sebelumnya">
+            &#10094;
+        </button>
+
+        <button
+            type="button"
+            id="worshipPageNext"
+            onclick="nextWorshipCard()"
+            aria-label="Jadwal berikutnya">
+            &#10095;
+        </button>
+
+    </div>
+
+@endif
+
 </section>
+
 
 
 {{-- ============================================================
@@ -594,11 +620,37 @@
     .worship-header h1 {
         font-size: 2rem;
     }
-
     .worship-grid {
         grid-template-columns: 1fr;
     }
 
+    .worship-mobile-nav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.worship-mobile-nav button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.worship-mobile-nav button:disabled {
+    opacity: .35;
+    cursor: default;
+}
     .worship-modal {
         padding: 20px;
     }
@@ -675,6 +727,113 @@ $worshipData = $worshipSchedules->map(function ($schedule) {
 
 
 <script>
+
+    /* ============================================================
+   WORSHIP CARD CAROUSEL - HP
+============================================================ */
+
+let worshipPageCurrentIndex = 0;
+
+function getWorshipCards() {
+    return document.querySelectorAll(
+        '#worshipGrid .worship-card'
+    );
+}
+
+function updateWorshipCardCarousel() {
+
+    const cards = getWorshipCards();
+
+    if (!cards.length) {
+        return;
+    }
+
+    /* DESKTOP */
+    if (window.innerWidth > 700) {
+
+        cards.forEach(card => {
+            card.style.display = '';
+        });
+
+        return;
+    }
+
+    /* MOBILE */
+    cards.forEach((card, index) => {
+
+        if (index === worshipPageCurrentIndex) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+
+    });
+
+    const prev =
+        document.getElementById('worshipPagePrev');
+
+    const next =
+        document.getElementById('worshipPageNext');
+
+    if (prev) {
+        prev.disabled =
+            worshipPageCurrentIndex === 0;
+    }
+
+    if (next) {
+        next.disabled =
+            worshipPageCurrentIndex === cards.length - 1;
+    }
+}
+
+function previousWorshipCard() {
+
+    const cards = getWorshipCards();
+
+    if (!cards.length) {
+        return;
+    }
+
+    if (worshipPageCurrentIndex > 0) {
+
+        worshipPageCurrentIndex--;
+
+        updateWorshipCardCarousel();
+    }
+}
+
+function nextWorshipCard() {
+
+    const cards = getWorshipCards();
+
+    if (!cards.length) {
+        return;
+    }
+
+    if (
+        worshipPageCurrentIndex <
+        cards.length - 1
+    ) {
+
+        worshipPageCurrentIndex++;
+
+        updateWorshipCardCarousel();
+    }
+}
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+        updateWorshipCardCarousel();
+    }
+);
+
+window.addEventListener(
+    'resize',
+    function () {
+        updateWorshipCardCarousel();
+    }
+);
 
 const worshipData =
     {{ \Illuminate\Support\Js::from($worshipData) }};

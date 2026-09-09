@@ -24,7 +24,7 @@
         </nav>
 
         {{-- BURGER MOBILE --}}
-        <button type="button"
+       <button type="button"
                 id="mobileMenuButton"
                 class="mobile-menu-button"
                 onclick="toggleMobileMenu()"
@@ -60,12 +60,21 @@
 function toggleMobileMenu() {
 
     const menu = document.getElementById('mobileMenu');
+    const button = document.getElementById('mobileMenuButton');
 
-    if (!menu) {
+    if (!menu || !button) {
         return;
     }
 
     menu.classList.toggle('active');
+    button.classList.toggle('active');
+
+    const isOpen = menu.classList.contains('active');
+
+    button.setAttribute(
+        'aria-label',
+        isOpen ? 'Tutup menu' : 'Buka menu'
+    );
 
 }
 
