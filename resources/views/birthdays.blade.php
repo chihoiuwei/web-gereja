@@ -69,27 +69,38 @@
                         Selamat Ulang Tahun
                     </p>
 
-                    @php
-                    $displayName = $jemaat->name;
+                        @php
+                            $age = $jemaat->birth_date?->age;
 
-                    if ($jemaat->birth_date) {
-                        $age = $jemaat->birth_date->age;
+                            $isPenatua = $jemaat->ministryMembers->contains(function ($member) {
+                                return $member->is_active
+                                    && strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+                            });
 
-                        if ($age > 40) {
-                            if ($jemaat->gender === 'male') {
-                                $displayName = 'Pak ' . $jemaat->name;
-                            } elseif ($jemaat->gender === 'female') {
-                                $displayName = 'Bu ' . $jemaat->name;
+                            $prefix = '';
+
+                            if ($age !== null) {
+                                if ($age < 20) {
+                                    $prefix = 'Adik';
+                                } elseif ($age > 35) {
+                                    if ($jemaat->gender === 'male') {
+                                        $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                    } elseif ($jemaat->gender === 'female') {
+                                        $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                    }
+                                } elseif ($age > 20) {
+                                    $prefix = 'Kak';
+                                }
                             }
-                        } elseif ($age > 20) {
-                            $displayName = 'Kak ' . $jemaat->name;
-                        }
-                    }
-                @endphp
 
-                <h2>
-                    {{ $displayName }}
-                </h2>
+                            $displayName = $prefix
+                                ? $prefix . ' ' . $jemaat->name
+                                : $jemaat->name;
+                        @endphp
+
+                        <h2>
+                            {{ $displayName }}
+                        </h2>
 
                     <div class="birthday-date">
                         {{ $jemaat->birth_date->translatedFormat('d F Y') }}

@@ -61,9 +61,12 @@ class HomeController extends Controller
         ));
     }
 
-    public function birthdays()
-    {
-        $birthdays = Jemaat::where('is_active', true)
+    public function birthdays() {
+        
+        $birthdays = Jemaat::with([
+                'ministryMembers.ministry'
+            ])
+            ->where('is_active', true)
             ->whereNotNull('birth_date')
             ->whereMonth('birth_date', now()->month)
             ->orderByRaw('DAY(birth_date)')

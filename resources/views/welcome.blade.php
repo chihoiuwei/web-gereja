@@ -363,10 +363,10 @@
 </div>
 
 
-<div class="vm-mission-grid">
+    <div class="vm-mission-grid">
 
-    {{-- MISI 01 --}}
-    <article class="vm-mission-card vm-blue">
+        {{-- MISI 01 --}}
+        <article class="vm-mission-card vm-blue">
 
         <span class="vm-number">
             01
@@ -489,86 +489,130 @@
 <div class="vm-pillars">
 
     {{-- JUDUL --}}
-    <div class="vm-pillars-title">
+        <div class="vm-pillars-title">
 
-        <h3>
-            Empat Pilar
-        </h3>
+            <h3>
+                Empat Pilar
+            </h3>
 
-        <p>
-            HIDUP BERSAMA, BERTUMBUH BERSAMA,<br>
-            MENJADI BERKAT BERSAMA
-        </p>
+            <p>
+                HIDUP BERSAMA, BERTUMBUH BERSAMA,<br>
+                MENJADI BERKAT BERSAMA
+            </p>
 
-    </div>
+        </div>
 
 
     {{-- PILAR 1 --}}
-    <div class="vm-pillar">
+        <button type="button"
+                class="vm-pillar"
+                onclick="openPillarModal('ibadah')">
 
-        <div class="vm-icon">
-            <img src="{{ asset('images/bersama.png') }}"
-                 alt="Ibadah Bersama">
-        </div>
+            <div class="vm-icon">
+                <img src="{{ asset('images/bersama.png') }}"
+                    alt="Ibadah Bersama">
+            </div>
 
-        <span>
-            Ibadah<br>
-            Bersama
-        </span>
+            <span>
+                Ibadah<br>
+                Bersama
+            </span>
 
-    </div>
+        </button>
 
 
     {{-- PILAR 2 --}}
-    <div class="vm-pillar">
+        <button type="button"
+        class="vm-pillar"
+        onclick="openPillarModal('pelayanan')">
 
-        <div class="vm-icon vm-red">
-            <img src="{{ asset('images/pelayanan.png') }}"
-                 alt="Pelayanan Bersama">
-        </div>
+            <div class="vm-icon vm-red">
+                <img src="{{ asset('images/pelayanan.png') }}"
+                    alt="Pelayanan Bersama">
+            </div>
 
-        <span>
-            Pelayanan<br>
-            Bersama
-        </span>
+            <span>
+                Pelayanan<br>
+                Bersama
+            </span>
 
-    </div>
+        </button>
 
 
     {{-- PILAR 3 --}}
-    <div class="vm-pillar">
+        <button type="button"
+            class="vm-pillar"
+            onclick="openPillarModal('kepemimpinan')">
 
-        <div class="vm-icon vm-yellow">
-            <img src="{{ asset('images/kppp.png') }}"
-                 alt="Kepemimpinan Bersama">
-        </div>
+            <div class="vm-icon vm-yellow">
+                <img src="{{ asset('images/kppp.png') }}"
+                    alt="Kepemimpinan Bersama">
+            </div>
 
-        <span>
-            Kepemimpinan<br>
-            Bersama
-        </span>
+            <span>
+                Kepemimpinan<br>
+                Bersama
+            </span>
 
-    </div>
+        </button>
 
 
     {{-- PILAR 4 --}}
-    <div class="vm-pillar">
+        <button type="button"
+            class="vm-pillar"
+            onclick="openPillarModal('kehidupan')">
 
-        <div class="vm-icon">
-            <img src="{{ asset('images/kb.png') }}"
-                 alt="Kehidupan Bersama">
+            <div class="vm-icon">
+                <img src="{{ asset('images/kb.png') }}"
+                    alt="Kehidupan Bersama">
+            </div>
+
+            <span>
+                Kehidupan<br>
+                Bersama
+            </span>
+
         </div>
 
-        <span>
-            Kehidupan<br>
-            Bersama
-        </span>
+        <!-- modal pilar 1 -->
+        <div id="pillarModal"
+            class="pillar-modal"
+            aria-hidden="true">
+
+            <div class="pillar-modal-overlay"
+                onclick="closePillarModal()"></div>
+
+            <div class="pillar-modal-content"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="pillarModalTitle">
+
+                <button type="button"
+                        class="pillar-modal-close"
+                        onclick="closePillarModal()"
+                        aria-label="Tutup">
+                    &times;
+                </button>
+
+                <h3 id="pillarModalTitle">
+                    Ibadah Bersama
+                </h3>
+
+                <div id="pillarModalText">
+                    Ibadah bersama dalam berjemaat adalah persekutuan dalam Roh berpola lingkaran yang dipimpin oleh Roh Kudus dan kebenaran Firman Tuhan yang tidak dipimpin oleh manusia (liturgi), dan terdapat manifestasi karya Roh Kudus melalui 9 karunia Roh, penyembahan dalam Roh, pengajaran Firman dan perjamuan kudus, sebagaimana Tuhan Yesus adalah pusat dalam ibadah.
+
+                    <br><br>
+
+                    (I Kor 14:26 ; Wah 4:5; Kis 2:42)
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
-
-    </div>
 
 </section>
 
@@ -890,12 +934,37 @@
                             border-radius: 10px;
                         ">
 
+                            @php
+                                $age = $jemaat->birth_date?->age;
+
+                                $isPenatua = $jemaat->ministryMembers->contains(function ($member) {
+                                    return $member->is_active
+                                        && strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+                                });
+
+                                $prefix = '';
+
+                                if ($age !== null) {
+                                    if ($age < 20) {
+                                        $prefix = 'Adik';
+                                    } elseif ($age > 35) {
+                                        if ($jemaat->gender === 'male') {
+                                            $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                        } elseif ($jemaat->gender === 'female') {
+                                            $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                        }
+                                    } elseif ($age > 20) {
+                                        $prefix = 'Kak';
+                                    }
+                                }
+                            @endphp
+
                             <span style="
                                 color: #111827;
                                 font-size: .9rem;
                                 font-weight: 600;
                             ">
-                                {{ $jemaat->name }}
+                                {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name }}
                             </span>
 
                             <span style="
@@ -1408,14 +1477,34 @@
                         text-align: center;
                     ">
 
-                        <h3 style="
-                            color: #111827;
-                            font-size: 1.1rem;
-                            font-weight: 800;
-                            margin: 0;
-                            line-height: 1.4;
-                        ">
-                            {{ $member->jemaat->name ?? '-' }}
+                        @php
+                            $jemaat = $member->jemaat;
+
+                            $age = $jemaat?->birth_date
+                                ? $jemaat->birth_date->age
+                                : null;
+
+                            $isPenatua = strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+
+                            $prefix = '';
+
+                            if ($age !== null) {
+                                if ($age < 20) {
+                                    $prefix = 'Adik';
+                                } elseif ($age > 35) {
+                                    if ($jemaat->gender === 'male') {
+                                        $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                    } elseif ($jemaat->gender === 'female') {
+                                        $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                    }
+                                } elseif ($age > 20) {
+                                    $prefix = 'Kak';
+                                }
+                            }
+                        @endphp
+
+                        <h3 class="penatalayan-name">
+                            {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name ?? '-' }}
                         </h3>
 
                         <p style="
@@ -2161,5 +2250,87 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+
+function openPillarModal(type) {
+    const modal = document.getElementById('pillarModal');
+    const title = document.getElementById('pillarModalTitle');
+    const text = document.getElementById('pillarModalText');
+
+    if (!modal || !title || !text) {
+        return;
+    }
+
+    const pillars = {
+        ibadah: {
+            title: 'Ibadah Bersama',
+            text: `
+                Ibadah bersama dalam berjemaat adalah persekutuan dalam Roh berpola lingkaran yang dipimpin oleh Roh Kudus dan kebenaran Firman Tuhan yang tidak dipimpin oleh manusia (liturgi), dan terdapat manifestasi karya Roh Kudus melalui 9 karunia Roh, penyembahan dalam Roh, pengajaran Firman dan perjamuan kudus, sebagaimana Tuhan Yesus adalah pusat dalam ibadah.
+
+                <br><br>
+
+                (I Kor 14:26 ; Wah 4:5; Kis 2:42)
+            `
+        },
+
+        pelayanan: {
+            title: 'Pelayanan Bersama',
+            text: `
+                Pelayanan yang dikerjakan secara bersama-sama melalui lima fungsi jawatan Roh, yaitu para rasul, para nabi, para pemberita Injil, para gembala, dan para pengajar, para diaken, para pendoa syafa'at, para pemusik untuk melengkapi jemaat bagi pembangunan Tubuh Kristus supaya mencapai kesatuan iman, kedewasaan penuh, dan tingkat pertumbuhan yang sesuai dengan kepenuhan Kristus.
+
+                <br><br>
+
+                (Ef 4:11-12 ; Kis 6:1-7)
+            `
+        },
+
+        kepemimpinan: {
+            title: 'Kepemimpinan Bersama',
+            text: `
+                Kepemimpinan gereja lokal yang dikerjakan secara bersama-sama yaitu para hamba Tuhan dan para penatua dalam sistem kepenatuan majemuk dan melalui persidangan Ilahi secara mufakat sebagai otoritas tertinggi dalam pengambilan suatu keputusan.
+
+                <br><br>
+
+                (Kis 15)
+            `
+        },
+
+        kehidupan: {
+            title: 'Kehidupan Bersama',
+            text: `
+                Menjalin kehidupan bersama-sama dengan orang-orang kudus dengan berbagi kasih persaudaraan dalam hubungan kekeluargaan yang rukun dan bersatu, yaitu Yesus sebagai Kepala dalam Rumah-Nya. Kasih Kristus, Roh Kudus dan Firman sebagai tali pengikat yang menyatukan sesama anggota Tubuh Kristus, dan 9 buah Roh termanifestasi dalam kehidupan berjemaat.
+
+                <br><br>
+
+                (Kis 2:41-47 ; Kis 4:32-37 ; Gal 5:22-22 ; Kor 13:1-13)
+            `
+        }
+    };
+
+    const pillar = pillars[type];
+
+    if (!pillar) {
+        return;
+    }
+
+    title.textContent = pillar.title;
+    text.innerHTML = pillar.text;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePillarModal() {
+    const modal = document.getElementById('pillarModal');
+
+    if (!modal) {
+        return;
+    }
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
 
 </script>

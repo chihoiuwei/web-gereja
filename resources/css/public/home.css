@@ -569,6 +569,92 @@
    VISI & MISI
 ============================================================ */
 
+.pillar-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 9999;
+}
+
+.pillar-modal.active {
+    display: flex;
+}
+
+.pillar-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+}
+
+.pillar-modal-content {
+    position: relative;
+    z-index: 1;
+    width: min(720px, 100%);
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 24px;
+    padding: 42px 44px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
+}
+
+.pillar-modal-content h3 {
+    margin: 0 0 24px;
+    color: #123f83;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+#pillarModalText {
+    color: #374151;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.pillar-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #1f2937;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.pillar-modal-close:hover {
+    background: #e5e7eb;
+}
+
+@media (max-width: 700px) {
+    .pillar-modal {
+        padding: 16px;
+    }
+
+    .pillar-modal-content {
+        max-height: 85vh;
+        padding: 36px 22px 28px;
+        border-radius: 20px;
+    }
+
+    .pillar-modal-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+    }
+
+    #pillarModalText {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+}
+
 .vision-mission-section {
     position: relative;
 
@@ -1058,6 +1144,10 @@
 
 .vm-pillar {
 
+    cursor: pointer;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     min-width: 0;
 
     padding: 0 20px;
@@ -1065,6 +1155,19 @@
     text-align: center;
 
     box-sizing: border-box;
+}
+
+.vm-pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, .12);
+}
+
+.vm-pillar:hover .vm-icon {
+    transform: scale(1.08);
+}
+
+.vm-pillar .vm-icon {
+    transition: transform .25s ease;
 }
 
 .vm-pillar + .vm-pillar {
@@ -1792,7 +1895,25 @@
 /* ============================================================
    PENATALAYAN SECTION — Home only (section preview di welcome)
 ============================================================ */
+.penatalayan-name {
+    color: #111827;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.35;
 
+    /* Nama boleh turun baris, tapi kata tidak dipotong */
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: normal;
+
+    /* Tinggi area nama dibuat seragam */
+    min-height: 4.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .penatalayan-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1821,6 +1942,12 @@
    ============================================================ */
 
 @media (max-width: 800px) {
+
+    .penatalayan-name {
+        font-size: 1rem;
+        line-height: 1.35;
+        min-height: 4.2rem;
+    }
 
     .penatalayan-grid {
         display: grid;

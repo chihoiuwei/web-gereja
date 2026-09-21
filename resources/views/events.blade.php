@@ -146,9 +146,27 @@
 
             </div>
 
-       @endforelse
+    @endforelse
 
+</div>
+
+@if ($events->count() > 1)
+    <div class="events-mobile-nav">
+        <button type="button"
+                id="eventsPagePrev"
+                onclick="previousEventCard()"
+                aria-label="Kegiatan sebelumnya">
+            &#10094;
+        </button>
+
+        <button type="button"
+                id="eventsPageNext"
+                onclick="nextEventCard()"
+                aria-label="Kegiatan berikutnya">
+            &#10095;
+        </button>
     </div>
+@endif
 
 
     {{-- TOMBOL CAROUSEL KHUSUS HP --}}

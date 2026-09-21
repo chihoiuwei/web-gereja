@@ -55,7 +55,7 @@
                 </a>
 
                 <a
-                    href="https://www.instagram.com/gpijs.jakpus?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+                    href="https://www.instagram.com/gpi_jakpus?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
                     target="_blank"
                     rel="noopener noreferrer"
                     class="footer-social"
@@ -63,14 +63,14 @@
                     Instagram
                 </a>
 
-                <a
+                <!-- <a
                     href="https://www.youtube.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="footer-social"
                 >
                     YouTube
-                </a>
+                </a> -->
 
             </div>
         </div>
