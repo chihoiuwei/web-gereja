@@ -61,8 +61,34 @@
                 {{-- CONTENT --}}
                 <div class="team-content">
 
+                    @php
+                        $jemaat = $member->jemaat;
+
+                        $age = $jemaat?->birth_date
+                            ? $jemaat->birth_date->age
+                            : null;
+
+                        $isPenatua = strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+
+                        $prefix = '';
+
+                        if ($age !== null) {
+                            if ($age < 20) {
+                                $prefix = 'Adik';
+                            } elseif ($age > 35) {
+                                if ($jemaat->gender === 'male') {
+                                    $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                } elseif ($jemaat->gender === 'female') {
+                                    $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                }
+                            } elseif ($age > 20) {
+                                $prefix = 'Kak';
+                            }
+                        }
+                    @endphp
+
                     <h2>
-                        {{ $member->jemaat->name ?? '-' }}
+                        {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name ?? '-' }}
                     </h2>
 
                     <p class="team-ministry">
