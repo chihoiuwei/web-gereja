@@ -103,7 +103,7 @@
                         </h2>
 
                     <div class="birthday-date">
-                        {{ $jemaat->birth_date->translatedFormat('d F Y') }}
+                        {{ $jemaat->birth_date->translatedFormat('d F') }}
                     </div>
 
                     <p class="birthday-message">
