@@ -153,15 +153,24 @@
 
 .strip-item {
     display: flex;
-
     align-items: center;
     justify-content: center;
+    min-width: 300px;
+}
 
-    gap: 35px;
+.strip-item span {
+    display: inline-block;
+    width: 190px;
+    text-align: right;
+}
 
+.strip-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
     flex-shrink: 0;
-
-    white-space: nowrap;
+    margin-left: 80px;
 }
 
 .strip-item span {

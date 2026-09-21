@@ -192,6 +192,7 @@
 
             <img
                 id="modalWorshipImage"
+                class="worship-modal-clickable-image"
                 src=""
                 alt=""
             >
@@ -253,7 +254,27 @@
     </button>
 
 </div>
+<div
+    id="worshipImageLightbox"
+    class="worship-image-lightbox"
+    onclick="closeWorshipImageLightbox()"
+>
+    <button
+        type="button"
+        class="worship-image-lightbox-close"
+        onclick="closeWorshipImageLightbox(event)"
+        aria-label="Tutup foto"
+    >
+        &times;
+    </button>
 
+    <img
+        id="worshipLightboxImage"
+        src=""
+        alt=""
+        onclick="event.stopPropagation()"
+    >
+</div>
 
 <style>
 
@@ -461,7 +482,48 @@
 
     object-fit: contain;
 }
+.worship-modal-clickable-image {
+    cursor: zoom-in;
+}
+.worship-image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10050;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .92);
+}
 
+.worship-image-lightbox.active {
+    display: flex;
+}
+
+.worship-image-lightbox img {
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.worship-image-lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #111827;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10051;
+}
 
 /* KANAN */
 
@@ -918,10 +980,17 @@ function showWorship(index)
 
     if (worship.photo) {
 
-        image.src = worship.photo;
-        image.alt = worship.name;
+            image.src = worship.photo;
+            image.alt = worship.name;
 
-        image.style.display = 'block';
+            image.style.display = 'block';
+
+            image.onclick = function () {
+                openWorshipImageLightbox(
+                    worship.photo,
+                    worship.name
+                );
+            };
 
     } else {
 
@@ -1010,6 +1079,34 @@ document.addEventListener(
 
     }
 );
+
+function openWorshipImageLightbox(photo, name) {
+    const lightbox = document.getElementById('worshipImageLightbox');
+    const image = document.getElementById('worshipLightboxImage');
+
+    if (!lightbox || !image) {
+        return;
+    }
+
+    image.src = photo;
+    image.alt = name || '';
+
+    lightbox.classList.add('active');
+}
+
+function closeWorshipImageLightbox(event = null) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const lightbox = document.getElementById('worshipImageLightbox');
+
+    if (!lightbox) {
+        return;
+    }
+
+    lightbox.classList.remove('active');
+}
 
 </script>
 
