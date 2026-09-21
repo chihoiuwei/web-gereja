@@ -1338,220 +1338,350 @@
         {{-- ============================================================
      PENATALAYAN
 ============================================================ --}}
-<section id="penatalayan"
-         style="
-            background: #ffffff;
-            padding: 90px 2.5rem;
-         ">
-
-    <div style="
-        max-width: 1250px;
-        margin: 0 auto;
-    ">
-
-        {{-- HEADER --}}
-        <div style="
-            text-align: center;
-            margin-bottom: 50px;
-        ">
-
-            <p style="
-                color: #2563eb;
-                font-size: .8rem;
-                font-weight: 800;
-                letter-spacing: .18em;
-                margin: 0 0 10px;
-            ">
-                PENATALAYAN GEREJA 
-            </p>
-
-            <h2 style="
-                color: #082d66;
-                font-family: Georgia, serif;
-                font-size: clamp(2rem, 4vw, 3.5rem);
-                font-weight: 900;
-                margin: 0;
-            ">
-                SETIAP KITA DIPANGGIL UNTUK MELAYANI TUHAN
-            </h2>
-
-            <p style="
-                max-width: 650px;
-                margin: 15px auto 0;
-                color: #64748b;
-                font-size: .95rem;
-                line-height: 1.7;
-            ">
-                “Tetapi sekarang, setelah kamu dimerdekakan dari dosa dan setelah kamu menjadi hamba Allah, kamu beroleh buah yang membawa kamu kepada pengudusan dan sebagai kesudahannya ialah hidup yang kekal.”
-<br> Roma 6:22
-            </p>
-
-                <a href="{{ url('/penatalayan') }}" style="
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-top: 28px;
-                    padding: 12px 24px;
-                    border-radius: 999px;
-                    background: orange;
-                    color: #fff;
-                    font-size: .8rem;
-                    font-weight: 800;
-                    letter-spacing: .08em;
-                    text-decoration: none;
-                    transition: .2s;
+        <section id="penatalayan"
+                style="
+                    background: #ffffff;
+                    padding: 90px 2.5rem;
                 ">
-                    MEET THE TEAM →
-                </a>
 
-        </div>
+            <div style="
+                max-width: 1250px;
+                margin: 0 auto;
+            ">
 
-
-        {{-- CARDS --}}
-
-        </div>
-
-
-        {{-- CARDS --}}
- <div class="penatalayan-grid">
-
-           @forelse ($penatalayan->take(7) as $member)
-
+                {{-- HEADER --}}
                 <div style="
-                    background: #fff;
-                    border-radius: 20px;
-                    overflow: hidden;
-                    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-                    border: 1px solid #eef2f7;
+                    text-align: center;
+                    margin-bottom: 50px;
                 ">
 
-                    {{-- FOTO --}}
-                    <div style="
-                        height: 280px;
-                        background: #f8fafc;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        overflow: hidden;
+                    <p style="
+                        color: #2563eb;
+                        font-size: .8rem;
+                        font-weight: 800;
+                        letter-spacing: .18em;
+                        margin: 0 0 10px;
                     ">
+                        PENATALAYAN GEREJA 
+                    </p>
 
-                        @if ($member->jemaat && $member->jemaat->photo)
+                    <h2 style="
+                        color: #082d66;
+                        font-family: Georgia, serif;
+                        font-size: clamp(2rem, 4vw, 3.5rem);
+                        font-weight: 900;
+                        margin: 0;
+                    ">
+                        SETIAP KITA DIPANGGIL UNTUK MELAYANI TUHAN
+                    </h2>
 
-                            <img
-                                src="{{ asset('storage/' . $member->jemaat->photo) }}"
-                                alt="{{ $member->jemaat->name }}"
-                                style="
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: contain;
-                                    display: block;
-                                "
-                            >
+                    <p style="
+                        max-width: 650px;
+                        margin: 15px auto 0;
+                        color: #64748b;
+                        font-size: .95rem;
+                        line-height: 1.7;
+                    ">
+                        “Tetapi sekarang, setelah kamu dimerdekakan dari dosa dan setelah kamu menjadi hamba Allah, kamu beroleh buah yang membawa kamu kepada pengudusan dan sebagai kesudahannya ialah hidup yang kekal.”
+        <br> Roma 6:22
+                    </p>
 
-                        @else
+                        <a href="{{ url('/penatalayan') }}" style="
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: 28px;
+                            padding: 12px 24px;
+                            border-radius: 999px;
+                            background: orange;
+                            color: #fff;
+                            font-size: .8rem;
+                            font-weight: 800;
+                            letter-spacing: .08em;
+                            text-decoration: none;
+                            transition: .2s;
+                        ">
+                            MEET THE TEAM →
+                        </a>
 
+                </div>
+
+
+                {{-- CARDS --}}
+
+                </div>
+
+
+                {{-- CARDS --}}
+        <div class="penatalayan-grid penatalayan-desktop">
+
+                @forelse ($penatalayan->take(7) as $member)
+
+                        <div style="
+                            background: #fff;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+                            border: 1px solid #eef2f7;
+                        ">
+
+                            {{-- FOTO --}}
                             <div style="
-                                text-align: center;
-                                color: #94a3b8;
+                                height: 280px;
+                                background: #f8fafc;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                overflow: hidden;
                             ">
-                                <div style="
-                                    font-size: 3.5rem;
-                                    margin-bottom: 8px;
-                                ">
-                                    👤
-                                </div>
 
-                                <span style="font-size: .85rem;">
-                                    Belum ada foto
-                                </span>
+                                @if ($member->jemaat && $member->jemaat->photo)
+
+                                    <img
+                                        src="{{ asset('storage/' . $member->jemaat->photo) }}"
+                                        alt="{{ $member->jemaat->name }}"
+                                        style="
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: contain;
+                                            display: block;
+                                        "
+                                    >
+
+                                @else
+
+                                    <div style="
+                                        text-align: center;
+                                        color: #94a3b8;
+                                    ">
+                                        <div style="
+                                            font-size: 3.5rem;
+                                            margin-bottom: 8px;
+                                        ">
+                                            👤
+                                        </div>
+
+                                        <span style="font-size: .85rem;">
+                                            Belum ada foto
+                                        </span>
+                                    </div>
+
+                                @endif
+
                             </div>
 
-                        @endif
 
-                    </div>
-
-
-                    {{-- ISI CARD --}}
-                    <div style="
-                        padding: 22px;
-                        text-align: center;
-                    ">
-
-                        @php
-                            $jemaat = $member->jemaat;
-
-                            $age = $jemaat?->birth_date
-                                ? $jemaat->birth_date->age
-                                : null;
-
-                            $isPenatua = strtolower(trim($member->ministry->name ?? '')) === 'penatua';
-
-                            $prefix = '';
-
-                            if ($age !== null) {
-                                if ($age < 20) {
-                                    $prefix = 'Adik';
-                                } elseif ($age > 35) {
-                                    if ($jemaat->gender === 'male') {
-                                        $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
-                                    } elseif ($jemaat->gender === 'female') {
-                                        $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
-                                    }
-                                } elseif ($age > 20) {
-                                    $prefix = 'Kak';
-                                }
-                            }
-                        @endphp
-
-                        <h3 class="penatalayan-name">
-                            {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name ?? '-' }}
-                        </h3>
-
-                        <p style="
-                            color: #2563eb;
-                            font-size: .8rem;
-                            font-weight: 700;
-                            margin: 8px 0 0;
-                        ">
-                            {{ $member->ministry->name ?? '-' }}
-                        </p>
-
-                        @if ($member->position)
-
-                            <p style="
-                                color: #64748b;
-                                font-size: .85rem;
-                                margin: 6px 0 0;
+                            {{-- ISI CARD --}}
+                            <div style="
+                                padding: 22px;
+                                text-align: center;
                             ">
-                                {{ $member->position }}
-                            </p>
 
-                        @endif
+                                @php
+                                    $jemaat = $member->jemaat;
 
-                    </div>
+                                    $age = $jemaat?->birth_date
+                                        ? $jemaat->birth_date->age
+                                        : null;
+
+                                    $isPenatua = strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+
+                                    $prefix = '';
+
+                                    if ($age !== null) {
+                                        if ($age < 20) {
+                                            $prefix = 'Adik';
+                                        } elseif ($age > 35) {
+                                            if ($jemaat->gender === 'male') {
+                                                $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                            } elseif ($jemaat->gender === 'female') {
+                                                $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                            }
+                                        } elseif ($age > 20) {
+                                            $prefix = 'Kak';
+                                        }
+                                    }
+                                @endphp
+
+                                <h3 class="penatalayan-name">
+                                    {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name ?? '-' }}
+                                </h3>
+
+                                <p style="
+                                    color: #2563eb;
+                                    font-size: .8rem;
+                                    font-weight: 700;
+                                    margin: 8px 0 0;
+                                ">
+                                    {{ $member->ministry->name ?? '-' }}
+                                </p>
+
+                                @if ($member->position)
+
+                                    <p style="
+                                        color: #64748b;
+                                        font-size: .85rem;
+                                        margin: 6px 0 0;
+                                    ">
+                                        {{ $member->position }}
+                                    </p>
+
+                                @endif
+
+                            </div>
+
+                        </div>
+
+                    @empty
+
+                        <div style="
+                            grid-column: 1 / -1;
+                            text-align: center;
+                            padding: 50px 20px;
+                            color: #94a3b8;
+                        ">
+                            Belum ada penatalayan yang aktif.
+                        </div>
+
+                    @endforelse
 
                 </div>
 
-            @empty
+            </div>
 
-                <div style="
-                    grid-column: 1 / -1;
-                    text-align: center;
-                    padding: 50px 20px;
-                    color: #94a3b8;
-                ">
-                    Belum ada penatalayan yang aktif.
-                </div>
+            <div class="penatalayan-mobile">
 
-            @endforelse
+                @foreach (['Penatua', 'Pendoa', 'Penginjil', 'Musik'] as $ministryName)
 
-        </div>
+                    @php
+                        $member = $penatalayan->first(function ($item) use ($ministryName) {
+                            return strtolower(trim($item->ministry->name ?? '')) === strtolower($ministryName);
+                        });
+                    @endphp
 
-    </div>
+                    @if ($member)
 
-</section>
+                        <div style="
+                            background: #fff;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+                            border: 1px solid #eef2f7;
+                        ">
+
+                            {{-- FOTO --}}
+                            <div style="
+                                height: 220px;
+                                background: #f8fafc;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                overflow: hidden;
+                            ">
+
+                                @if ($member->jemaat && $member->jemaat->photo)
+
+                                    <img
+                                        src="{{ asset('storage/' . $member->jemaat->photo) }}"
+                                        alt="{{ $member->jemaat->name }}"
+                                        style="
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: contain;
+                                            display: block;
+                                        "
+                                    >
+
+                                @else
+
+                                    <div style="
+                                        text-align: center;
+                                        color: #94a3b8;
+                                    ">
+                                        <div style="
+                                            font-size: 3rem;
+                                            margin-bottom: 8px;
+                                        ">
+                                            👤
+                                        </div>
+
+                                        <span style="font-size: .8rem;">
+                                            Belum ada foto
+                                        </span>
+                                    </div>
+
+                                @endif
+
+                            </div>
+
+                            {{-- ISI CARD --}}
+                            <div style="
+                                padding: 16px;
+                                text-align: center;
+                            ">
+
+                                @php
+                                    $jemaat = $member->jemaat;
+
+                                    $age = $jemaat?->birth_date
+                                        ? $jemaat->birth_date->age
+                                        : null;
+
+                                    $isPenatua = strtolower(trim($member->ministry->name ?? '')) === 'penatua';
+
+                                    $prefix = '';
+
+                                    if ($age !== null) {
+                                        if ($age < 20) {
+                                            $prefix = 'Adik';
+                                        } elseif ($age > 35) {
+                                            if ($jemaat->gender === 'male') {
+                                                $prefix = $isPenatua ? 'Bpk Pnt' : 'Bpk';
+                                            } elseif ($jemaat->gender === 'female') {
+                                                $prefix = $isPenatua ? 'Ibu Pnt' : 'Ibu';
+                                            }
+                                        } elseif ($age > 20) {
+                                            $prefix = 'Kak';
+                                        }
+                                    }
+                                @endphp
+
+                                <h3 class="penatalayan-name">
+                                    {{ $prefix ? $prefix . ' ' : '' }}{{ $jemaat->name ?? '-' }}
+                                </h3>
+
+                                <p style="
+                                    color: #2563eb;
+                                    font-size: .75rem;
+                                    font-weight: 700;
+                                    margin: 6px 0 0;
+                                ">
+                                    {{ $member->ministry->name ?? '-' }}
+                                </p>
+
+                                @if ($member->position)
+                                    <p style="
+                                        color: #64748b;
+                                        font-size: .75rem;
+                                        margin: 4px 0 0;
+                                    ">
+                                        {{ $member->position }}
+                                    </p>
+                                @endif
+
+                            </div>
+
+                        </div>
+
+                    @endif
+
+                @endforeach
+
+            </div>
 
         </section>
+
+    </section>
 
 
 {{-- ============================================================
